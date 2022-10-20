@@ -39,19 +39,20 @@ class Bot(DesktopBot):
 
         stores = ['Amazon', 'Americanas', 'Submarino', 'AliExpress']
         WAITING_TIME = 20000
+
         # Meliuz
         self.browse("https://www.meliuz.com.br/desconto")
 
         for store in stores:
-            if not self.find( "search_meliuz", matching=0.97, waiting_time=WAITING_TIME):
+            if not self.find( "search_meliuz", matching=0.97, waiting_time=10000):
                 self.not_found("search_meliuz")
-            self.click()
+            self.click_relative(76, 17)
             self.paste(store)
             
             if not self.find( "select_meliuz", matching=0.97, waiting_time=WAITING_TIME):
                 self.not_found("select_meliuz")
             self.click_relative(10, 43)
-            
+
             if not self.find( "cb_meliuz", matching=0.97, waiting_time=WAITING_TIME):
                 self.not_found("cb_meliuz")
             self.double_click_relative(21, 8)
@@ -72,10 +73,12 @@ class Bot(DesktopBot):
                     "cashback": cb_meliuz
                 }
             )
-
+            self.sleep(1000)
+            self.click_relative(-300,-50)
             if not self.find( "back_meliuz", matching=0.97, waiting_time=WAITING_TIME):
                 self.not_found("back_meliuz")
             self.click()
+
 
 
         if not self.find( "addressbar", matching=0.97, waiting_time=10000):
@@ -99,7 +102,6 @@ class Bot(DesktopBot):
             if not self.find( "cb_inter", matching=0.97, waiting_time=WAITING_TIME):
                 self.not_found("cb_inter")
             self.double_click_relative(221, 31)
-
             self.control_c()
             cb_inter = self.get_clipboard()
             print(f"Banco Inter: {store} => {cb_inter}")

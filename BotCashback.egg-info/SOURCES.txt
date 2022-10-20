@@ -12,6 +12,7 @@ BotCashback.egg-info/dependency_links.txt
 BotCashback.egg-info/requires.txt
 BotCashback.egg-info/top_level.txt
 BotCashback/resources/addressbar.png
+BotCashback/resources/amazon.png
 BotCashback/resources/back_meliuz.png
 BotCashback/resources/back_to_search_inter.png
 BotCashback/resources/cb_amazon.png
@@ -19,6 +20,7 @@ BotCashback/resources/cb_inter.png
 BotCashback/resources/cb_meliuz.png
 BotCashback/resources/cb_zoom.png
 BotCashback/resources/dismiss.png
+BotCashback/resources/dismiss_box.png
 BotCashback/resources/find_inter.png
 BotCashback/resources/inter_cb.png
 BotCashback/resources/search_meliuz.png
